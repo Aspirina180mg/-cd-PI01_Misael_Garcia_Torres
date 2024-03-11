@@ -1,7 +1,7 @@
 # Commented out IPython magic to ensure Python compatibility.
 # %autosave 60
-from google.colab import drive
-drive.mount('/content/drive', force_remount = True)
+#from google.colab import drive
+#drive.mount('/content/drive', force_remount = True)
 # %cd /content/drive/MyDrive/Github/PI01_Misael_Garcia_Torres
 
 """**Importación de librerías y descarga de recursos necesarios para el proyecto:**
