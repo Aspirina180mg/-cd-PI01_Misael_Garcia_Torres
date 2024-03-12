@@ -1,16 +1,16 @@
 # requirements.txt
 
 # Librerías estándar
-matplotlib==3.4.3
-numpy==1.21.2
-pandas==1.3.3
+matplotlib
+numpy
+pandas
 
 # Librerías de procesamiento de datos y análisis
-gzip==0.9.0
-json==2.0.9
+gzip
+json
 
 # Procesamiento de lenguaje natural
-nltk==3.6.3
+nltk
 
 # Herramientas específicas para el proyecto
-zipfile==3.5.0
+zipfile
