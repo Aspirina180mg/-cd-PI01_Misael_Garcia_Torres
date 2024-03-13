@@ -1,10 +1,10 @@
-'''Correr con uvicorn main:app --reload'''
+''' Correr api localmente con uvicorn main:app --reload'''
+''' Llamar Online con https://pi01-misael-garcia-torres.onrender.com'''
+''' Modificar con https://dashboard.render.com/web/srv-cnos3i6d3nmc73do7n9g/deploys/dep-cnosgdud3nmc73do9em0'''
 
 # librerias utilizadas
 import pandas as pd
 from fastapi import FastAPI
-
-
 
 # Creación de API
 app = FastAPI()
