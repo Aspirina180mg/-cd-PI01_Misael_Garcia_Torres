@@ -1,16 +1,1 @@
-# requirements.txt
-
-# Librerías estándar
-matplotlib
-numpy
 pandas
-
-# Librerías de procesamiento de datos y análisis
-gzip
-json
-
-# Procesamiento de lenguaje natural
-nltk
-
-# Herramientas específicas para el proyecto
-zipfile
