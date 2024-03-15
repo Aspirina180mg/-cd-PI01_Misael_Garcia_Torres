@@ -41,6 +41,8 @@ async def PlayTimeGenre(genre: str):
     >>> PlayTimeGenre("Shooter")
     {'Año de lanzamiento con más horas jugadas para Género Shooter': '2023'}
     """
+    genre_original = genre
+    genre = genre.lower()
     # Filtrar el DataFrame por el género proporcionado
     df_genre = df_PlayTimeGenre[df_PlayTimeGenre['genre'] == genre]
 
@@ -51,7 +53,7 @@ async def PlayTimeGenre(genre: str):
     year_with_most_playtime = df_sum_by_year.loc[df_sum_by_year['horas_jugadas'].idxmax()]
 
     # Devolver el año con más horas jugadas para el género dado
-    return {"Año de lanzamiento con más horas jugadas para Género {}: {}".format(genre, year_with_most_playtime['año'].item())}
+    return {"Año de lanzamiento con más horas jugadas para Género {}: {}".format(genre_original, year_with_most_playtime['año'].item())}
 
 
 @app.get('/UserForGenre/{genre}')
@@ -75,6 +77,8 @@ async def UserForGenre(genre: str):
     >>> UserForGenre("Shooter")
     {'Usuario con más horas jugadas para Género Shooter:': 'us213ndjss09sdf', 'Horas jugadas': [{'Año': 2013, 'Horas': 203}, {'Año': 2012, 'Horas': 100}, {'Año': 2011, 'Horas': 23}]}
     """
+    genre_original = genre
+    genre = genre.lower()
     # Filtrar el DataFrame por el género proporcionado
     df_genre = df_UserForGenre[df_UserForGenre['genre'] == genre]
 
@@ -88,7 +92,7 @@ async def UserForGenre(genre: str):
     hours_played_per_year = df_user.groupby('año')['horas_jugadas'].sum().reset_index().to_dict(orient='records')
 
     # Devolver el resultado en el formato especificado
-    return {"Usuario con más horas jugadas para Género {}:".format(genre): user_with_most_playtime, "Horas jugadas": hours_played_per_year}
+    return {"Usuario con más horas jugadas para Género {}:".format(genre_original): user_with_most_playtime, "Horas jugadas": hours_played_per_year}
 
 
 @app.get('/UsersRecommend/{year}')
