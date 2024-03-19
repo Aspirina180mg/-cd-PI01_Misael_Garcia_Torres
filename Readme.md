@@ -1,145 +1,82 @@
-<p align=center><img src=https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png><p>
+# Proyecto de Ciencia de Datos para Steam
 
-# <h1 align=center> **PROYECTO INDIVIDUAL Nº1** </h1>
+Este proyecto de ciencia de datos se centra en el análisis de datos relacionados con la plataforma de distribución de videojuegos Steam, propiedad de Valve Corporation. El objetivo principal es realizar análisis y extracciones de información relevante para mejorar la experiencia del usuario y las operaciones de la plataforma.
 
-# <h1 align=center>**`Machine Learning Operations (MLOps)`**</h1>
+## Data Engineering
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/67664604/217914153-1eb00e25-ac08-4dfa-aaf8-53c09038f082.png"  height=300>
-</p>
+### Repositorio y Conjuntos de Datos
 
-¡Bienvenidos al primer proyecto individual de la etapa de labs! En esta ocasión, deberán hacer un trabajo situándose en el rol de un ***MLOps Engineer***.  
+- El repositorio del proyecto se encuentra disponible en [GitHub](https://github.com/soyHenry/PI_ML_OPS/tree/PT?tab=readme-ov-file).
+- Los conjuntos de datos utilizados se encuentran disponibles en [Google Drive](https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj).
 
-<hr>  
+### Preprocesamiento de Datos
 
-## **Descripción del problema (Contexto y rol a desarrollar)**
+- Se realiza la carga y limpieza de los conjuntos de datos utilizando Python y las siguientes librerías:
+  - Pandas
+  - NumPy
+  - Matplotlib
+  - NLTK
 
-## Contexto
+## Análisis de Datos
 
-Tienes tu modelo de recomendación dando unas buenas métricas :smirk:, y ahora, cómo lo llevas al mundo real? :eyes:
+### Descripción del Proyecto
 
-El ciclo de vida de un proyecto de Machine Learning debe contemplar desde el tratamiento y recolección de los datos (Data Engineer stuff) hasta el entrenamiento y mantenimiento del modelo de ML según llegan nuevos datos.
+El proyecto se divide en las siguientes secciones principales:
 
+1. **Exploración de Datos:** Análisis inicial de los conjuntos de datos para comprender su estructura y características.
+2. **Limpieza de Datos:** Proceso de limpieza y preprocesamiento de los datos para eliminar valores nulos, duplicados y realizar correcciones.
+3. **Transformación de Datos:** Conversión de tipos de datos, extracción de información relevante y preparación de los datos para su análisis.
+4. **Análisis de Sentimientos:** Utilización de análisis de sentimientos para evaluar las opiniones de los usuarios en las reseñas de juegos.
+5. **Generación de Reportes:** Creación de visualizaciones y reportes estadísticos para identificar patrones y tendencias en los datos.
 
-## Rol a desarrollar
+## Funciones de la API
 
-Empezaste a trabajar como **`Data Scientist`** en Steam, una plataforma multinacional de videojuegos. El mundo es bello y vas a crear tu primer modelo de ML que soluciona un problema de negocio: Steam pide que te encargues de crear un sistema de recomendación de videojuegos para usuarios. :worried:
+El proyecto también incluye la implementación de una API para proporcionar acceso a datos procesados y funcionalidades específicas. Las principales funciones de la API incluyen:
 
-Vas a sus datos y te das cuenta que la madurez de los mismos es poca (ok, es nula :sob: ): Datos anidados, de tipo raw, no hay procesos automatizados para la actualización de nuevos productos, entre otras cosas… haciendo tu trabajo imposible :weary: . 
+1. **UserForGenre():** Devuelve el año con más horas jugadas para un género específico.
+2. **UsersRecommend():** Proporciona información sobre los usuarios que recomiendan un juego.
+3. **UsersNotRecommend():** Proporciona información sobre los usuarios que no recomiendan un juego.
+4. **SentimentAnalysis():** Realiza análisis de sentimientos en las reseñas de los usuarios.
 
-Debes empezar desde 0, haciendo un trabajo rápido de **`Data Engineer`** y tener un **`MVP`** (_Minimum Viable Product_) para el cierre del proyecto! Tu cabeza va a explotar 🤯, pero al menos sabes cual es, conceptualmente, el camino que debes de seguir :exclamation:. Así que espantas los miedos y pones manos a la obra :muscle:
+## Archivos Generados
 
-<p align="center">
-<img src="https://github.com/HX-PRomero/PI_ML_OPS/raw/main/src/DiagramaConceptualDelFlujoDeProcesos.png"  height=500>
-</p>
+El proyecto genera varios archivos CSV con datos preprocesados y resultados de análisis para su posterior uso y visualización.
 
-<sub> Nota que aquí se reflejan procesos, no herramientas tecnológicas. Haz el ejercicio de entender qué herramienta del stack corresponde a cada parte del proceso<sub/>
+- `PlayTimeGenre.csv`: Contiene información sobre el tiempo de juego por género y año.
+- Otros archivos CSV generados para cada función de la API con los resultados correspondientes.
 
-## **Propuesta de trabajo (requerimientos de aprobación)**
+## Cómo Ejecutar el Proyecto
 
-**`Transformaciones`**:  Para este MVP no se te pide transformaciones de datos(` aunque encuentres una motivo para hacerlo `) pero trabajaremos en leer el dataset con el formato correcto. Puedes eliminar las columnas que no necesitan para responder las consultas o preparar los modelos de aprendizaje automático, y de esa manera optimizar el rendimiento de la API y el entrenamiento del modelo.
+Para ejecutar el proyecto localmente, sigue estos pasos:
 
-**`Feature Engineering`**:  En el dataset *user_reviews* se incluyen reseñas de juegos hechos por distintos usuarios. Debes crear la columna ***'sentiment_analysis'*** aplicando análisis de sentimiento con NLP con la siguiente escala: debe tomar el valor '0' si es malo, '1' si es neutral y '2' si es positivo. Esta nueva columna debe reemplazar la de user_reviews.review para facilitar el trabajo de los modelos de machine learning y el análisis de datos. De no ser posible este análisis por estar ausente la reseña escrita, debe tomar el valor de `1`.
+1. Clona el repositorio desde [GitHub](https://github.com/soyHenry/PI_ML_OPS/tree/PT?tab=readme-ov-file).
+2. Instala las dependencias del proyecto utilizando el archivo `requirements.txt`.
+3. Ejecuta el archivo `PI01_Misael_Garcia_Torres.ipynb` en un entorno de Jupyter Notebook o Google Colab.
+4. Explora y ejecuta las celdas según sea necesario para realizar análisis y obtener resultados.
 
-**`Desarrollo API`**:   Propones disponibilizar los datos de la empresa usando el framework ***FastAPI***. Las consultas que propones son las siguientes:
+## Requisitos del Sistema
 
-<sub> Debes crear las siguientes funciones para los endpoints que se consumirán en la API, recuerden que deben tener un decorador por cada una (@app.get(‘/’)).<sub/>
+El proyecto se ha desarrollado y probado en un entorno con las siguientes especificaciones:
 
+- Sistema Operativo: Windows 10
+- Memoria RAM: 16 GB
+- Procesador: Intel Core i7-9700K
 
-+ def **PlayTimeGenre( *`genero` : str* )**:
-    Debe devolver `año` con mas horas jugadas para dicho género.
-  
-Ejemplo de retorno: {"Año de lanzamiento con más horas jugadas para Género X" : 2013}
+## Contribuciones y Colaboraciones
 
-+ def **UserForGenre( *`genero` : str* )**:
-    Debe devolver el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año.
+¡Las contribuciones al proyecto son bienvenidas! Si deseas colaborar, no dudes en enviar una solicitud de extracción (pull request) o abrir un problema (issue) en el repositorio de GitHub.
 
-Ejemplo de retorno: {"Usuario con más horas jugadas para Género X" : us213ndjss09sdf,
-			     "Horas jugadas":[{Año: 2013, Horas: 203}, {Año: 2012, Horas: 100}, {Año: 2011, Horas: 23}]}
+## Licencia
 
-+ def **UsersRecommend( *`año` : int* )**:
-   Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado. (reviews.recommend = True y comentarios positivos/neutrales)
-  
-Ejemplo de retorno: [{"Puesto 1" : X}, {"Puesto 2" : Y},{"Puesto 3" : Z}]
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE` para obtener más detalles.
 
-+ def **UsersNotRecommend( *`año` : int* )**:
-   Devuelve el top 3 de juegos MENOS recomendados por usuarios para el año dado. (reviews.recommend = False y comentarios negativos)
-  
-Ejemplo de retorno: [{"Puesto 1" : X}, {"Puesto 2" : Y},{"Puesto 3" : Z}]
+## Contacto
 
-+ def **sentiment_analysis( *`año` : int* )**:
-    Según el año de lanzamiento, se devuelve una lista con la cantidad de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento. 
+Para obtener más información o realizar preguntas sobre el proyecto, puedes ponerte en contacto con el autor:
 
-Ejemplo de retorno: {Negative = 182, Neutral = 120, Positive = 278}
+- Nombre: Misael García Torres
+- Teléfono: +56 931 854 247
+- Correo Electrónico: [misagtor@gmail.com)
+- LinkedIn: [linkedin.com/in/mgarciat](https://www.linkedin.com/in/mgarciat/)
 
-<br/>
-
-
-> `Importante`<br>
-El MVP _tiene_ que ser una API que pueda ser consumida segun los criterios de [API REST o RESTful](https://rockcontent.com/es/blog/api-rest/) desde cualquier dispositivo conectado a internet. Algunas herramientas como por ejemplo, Streamlit, si bien pueden brindar una interfaz de consulta, no cumplen con las condiciones para ser consideradas una API, sin workarounds.
-
-
-**`Deployment`**: Conoces sobre [Render](https://render.com/docs/free#free-web-services) y tienes un [tutorial de Render](https://github.com/HX-FNegrete/render-fastapi-tutorial) que te hace la vida mas fácil :smile: . También podrías usar [Railway](https://railway.app/), o cualquier otro servicio que permita que la API pueda ser consumida desde la web.
-
-<br/>
-
-**`Análisis exploratorio de los datos`**: _(Exploratory Data Analysis-EDA)_
-
-Ya los datos están limpios, ahora es tiempo de investigar las relaciones que hay entre las variables del dataset, ver si hay outliers o anomalías (que no tienen que ser errores necesariamente :eyes: ), y ver si hay algún patrón interesante que valga la pena explorar en un análisis posterior. Las nubes de palabras dan una buena idea de cuáles palabras son más frecuentes en los títulos, ¡podría ayudar al sistema de predicción! En esta ocasión vamos a pedirte que no uses librerías para hacer EDA automático ya que queremos que pongas en práctica los conceptos y tareas involucrados en el mismo. Puedes leer un poco más sobre EDA en [este articulo](https://medium.com/swlh/introduction-to-exploratory-data-analysis-eda-d83424e47151)
-
-**`Modelo de aprendizaje automático`**: 
-
-Una vez que toda la data es consumible por la API, está lista para consumir por los departamentos de Analytics y Machine Learning, y nuestro EDA nos permite entender bien los datos a los que tenemos acceso, es hora de entrenar nuestro modelo de machine learning para armar un **sistema de recomendación**. Para ello, te ofrecen dos propuestas de trabajo: En la primera, el modelo deberá tener una relación ítem-ítem, esto es se toma un item, en base a que tan similar esa ese ítem al resto, se recomiendan similares. Aquí el input es un juego y el output es una lista de juegos recomendados, para ello recomendamos aplicar la *similitud del coseno*. 
-La otra propuesta para el sistema de recomendación debe aplicar el filtro user-item, esto es tomar un usuario, se encuentran usuarios similares y se recomiendan ítems que a esos usuarios similares les gustaron. En este caso el input es un usuario y el output es una lista de juegos que se le recomienda a ese usuario, en general se explican como “A usuarios que son similares a tí también les gustó…”. 
-Deben crear al menos **uno** de los dos sistemas de recomendación (Si se atreven a tomar el desafío, para mostrar su capacidad al equipo, ¡pueden hacer ambos!). Tu líder pide que el modelo derive obligatoriamente en un GET/POST en la API símil al siguiente formato:
-
-Si es un sistema de recomendación item-item:
-+ def **recomendacion_juego( *`id de producto`* )**:
-    Ingresando el id de producto, deberíamos recibir una lista con 5 juegos recomendados similares al ingresado.
-
-Si es un sistema de recomendación user-item:
-+ def **recomendacion_usuario( *`id de usuario`* )**:
-    Ingresando el id de un usuario, deberíamos recibir una lista con 5 juegos recomendados para dicho usuario.
-
-
-**`Video`**: Necesitas que al equipo le quede claro que tus herramientas funcionan realmente! Haces un video mostrando el resultado de las consultas propuestas y de tu modelo de ML entrenado! Recuerda presentarte, contar muy brevemente de que trata el proyecto y lo que vas a estar mostrando en el video.
-Para grabarlo, puedes usar la herramienta Zoom, haciendo una videollamada y grabando la pantalla, aunque seguramente buscando, encuentres muchas formas más. 😉
-
-<sub> **Spoiler**: El video NO DEBE durar mas de ***7 minutos*** y DEBE mostrar las consultas requeridas en funcionamiento desde la API y una breve explicación del modelo utilizado para el sistema de recomendación. En caso de que te sobre tiempo luego de grabarlo, puedes mostrar/explicar tu EDA, ETL e incluso cómo desarrollaste la API. <sub/>
-
-<br/>
-
-## **Criterios de evaluación**
-
-**`Código`**: Prolijidad de código, uso de clases y/o funciones, en caso de ser necesario, código comentado. Se tendrá en cuenta el trato de los valores str como `COUNter-strike` / `COUNTER-STRIKE` / `counter-strike`.
-
-**`Repositorio`**: Nombres de archivo adecuados, uso de carpetas para ordenar los archivos, README.md presentando el proyecto y el trabajo realizado. Recuerda que este último corresponde a la guía de tu proyecto, no importa que tan corto/largo sea siempre y cuando tu 'yo' + 1.5 AÑOS pueda entenderlo con facilidad. 
-
-**`Cumplimiento`** de los requerimientos de aprobación indicados en el apartado `Propuesta de trabajo`
-
-NOTA: Recuerde entregar el link de acceso al video. Puede alojarse en YouTube, Drive o cualquier plataforma de almacenamiento. **Verificar que sea de acceso público, recomendamos usar modo incógnito en tu navegador para confirmarlo**.
-
-<br/>
-Aquí te sintetizamos que es lo que consideramos un MVP aprobatorio, y la diferencia con un producto completo.
-
-
-
-<p align="center">
-<img src="https://github.com/HX-PRomero/PI_ML_OPS/raw/main/src/MVP_MLops.PNG"  height=250>
-</p>
-
-
-## **Fuente de datos**
-
-+ [Dataset](https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj): Carpeta con el archivo que requieren ser procesados, tengan en cuenta que hay datos que estan anidados (un diccionario o una lista como valores en la fila).
-+ [Diccionario de datos](https://docs.google.com/spreadsheets/d/1-t9HLzLHIGXvliq56UE_gMaWBVTPfrlTf2D9uAtLGrk/edit?usp=drive_link): Diccionario con algunas descripciones de las columnas disponibles en el dataset.
-<br/>
-
-## **Material de apoyo**
-
-En este mismo repositorio podrás encontrar algunos (hay repositorios con distintos sistemas de recomendación) [links de ayuda](https://github.com/HX-PRomero/PI_ML_OPS/raw/main/Material%20de%20apoyo.md). Recuerda que no son los unicos recursos que puedes utilizar!
-
-
-
-  
-<br/>
+¡Gracias por tu interés en este proyecto! Esperamos que sea útil y beneficioso para la comunidad de Steam y la ciencia de datos en general.

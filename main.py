@@ -13,18 +13,20 @@ df_UserForGenre = pd.read_csv('df_UserForGenre.csv', header=0)
 df_UsersRecommend = pd.read_csv('df_UsersRecommend.csv', header=0)
 df_UsersNotRecommend = pd.read_csv('df_UsersNotRecommend.csv', header=0)
 df_sentiment_analysis = pd.read_csv('df_sentiment_analysis.csv', header=0)
+df_recomendacion_juego = pd.read_csv('df_recomendacion_juego.csv', header=0)
+df_recomendacion_usuario = pd.read_csv('df_recomendacion_usuario.csv', header=0)
 
 # Endpoints de la API
 # @profile
 @app.get('/PlayTimeGenre/{genero}')
-async def   PlayTimeGenre(genero: str):
+async def PlayTimeGenre(genero: str):
     """
     Devuelve el año con mas horas jugadas para dicho género.
     Devuelve mensaje de error de no encontrar un registro
 
     Parametros
     ----------
-    genre : str
+    genero : str
         El género para el que se quiere encontrar el año con más horas jugadas.
 
     Devuelve
@@ -60,7 +62,7 @@ async def UserForGenre(genero: str):
 
     Parametros
     ----------
-    genre : str
+    genero : str
         El género para el cual se quiere encontrar el usuario con más horas jugadas y la lista de horas jugadas por año.
 
     Devuelve
@@ -95,13 +97,13 @@ async def UsersRecommend(anio: int):
     
     Parametros
     ----------
-    year : int
+    anio : int
         El año para el cual se desea obtener el top 3 de juegos más recomendados.
     
     Devuelve
     ----------
     list
-        Una lista de diccionarios que contiene los juegos más recomendados para el año dado, en el formato especificado.
+        Una lista de diccionarios que contiene los juegos más recomendados para el año dado.
     
     Ejemplo
     --------
@@ -127,13 +129,13 @@ async def UsersNotRecommend(anio: int):
     
     Parametros
     ----------
-    year : int
+    anio : int
         El año para el cual se desea obtener el top 3 de juegos más recomendados.
     
     Devuelve
     ----------
     list
-        Una lista de diccionarios que contiene los juegos más recomendados para el año dado, en el formato especificado.
+        Una lista de diccionarios que contiene los juegos más recomendados para el año dado
     
     Ejemplo
     --------
@@ -159,7 +161,7 @@ async def sentiment_analysis(anio: int):
     
     Parametros
     ----------
-    year : int
+    anio : int
         El año para el cual se quiere la información del análisis de sentimiento.
 
     Devuelve
@@ -181,3 +183,72 @@ async def sentiment_analysis(anio: int):
     if df_año.empty:
         return {"No se encontraron datos para el año {}".format(anio)}
     return df_año.groupby('categoria')['cantidad'].sum().to_dict()
+
+@app.get('/recomendacion_juego/{id_juego}')
+async def recomendacion_juego(id_juego: int):
+    """
+    Devuelve una Lista de recomendación con 5 juegos similares al ingresado.
+    Devuelve mensaje de error de no encontrar un registro
+    
+    Parametros
+    ----------
+    id : int
+        El id del juego para el cual se desea obtener la recomendación de 5 juegos.
+
+    Devuelve
+    -------
+    dict
+        Un diccionario que contiene los 5 juegos recomendados.
+
+    Ejemplo
+    --------
+    \>\>\> recomendacion_juego(04958)
+    
+    >\> {'Juegos recomendados para el juego Call Of Duty: Modern Warfare 3:': {'Call Of Duyty World War II', 'Battlefield One',  'Medal of Honor Allied Assault',  'Call Of Duty 4 Modern Warfare',  '',  '', }]}
+    
+    Consultas de Ejemplo
+    --------
+    023542, 97432018, 341564, 12354653 o 89736213.
+    """
+    #! Chequear si la función está correcta, el formato del diccionario será similar a df_UsersRecommend
+    df_id_juego = df_recomendacion_juegp[df_recomendacion_juego['id_juego'] == id_juego]
+    if df_id_juego.empty:
+        #! comvertir id en nombre de juego
+        return {"No se encontraron datos para el juego {}".format(id_juego)}
+    top = df_id_juego.head(3)
+    #! modificar return para que ajuste al ejemplo.
+    return [{'Puesto ' + str(row['puesto']): row['juego']} for _, row in top.iterrows()]
+
+@app.get('/recomendacion_usuario/{id_usuario}')
+async def recomendacion_usuario(id_usuario: int):
+    """
+    Devuelve una Lista de recomendación con 5 juegos recomendados para dicho usuario.
+    Devuelve mensaje de error de no encontrar un registro
+    
+    Parametros
+    ----------
+    id : int
+        El id del usuario para el cual se desea obtener la recomendación de 5 juegos.
+
+    Devuelve
+    -------
+    dict
+        Un diccionario que contiene los 5 juegos recomendados.
+
+    Ejemplo
+    --------
+    \>\>\> recomendacion_juego(04958)
+    
+    >\> {'Juegos recomendados para el usuario Aspirina180mg:': {'Call Of Duyty World War II', 'Battlefield One',  'Medal of Honor Allied Assault',  'Call Of Duty 4 Modern Warfare',  '',  '', }]}
+    
+    Consultas de Ejemplo
+    --------
+    "CrappyLupo", "JinxUWU", "Crosstiched", "Exposed" o "Crack".
+    """
+    #! Chequear si la función está correcta, el formato del diccionario será similar a df_UsersRecommend
+    df_id_usuario = df_recomendacion_usuario[df_recomendacion_usuario['id_usuario'] == id_usuario]
+    if df_id_usuario.empty:
+        return {"No se encontraron datos para el usuario {}".format(id_usuario)}
+    top = df_id_usuario.head(3)
+    #! modificar return para que ajuste al ejemplo.
+    return [{'Puesto ' + str(row['puesto']): row['juego']} for _, row in top.iterrows()]
