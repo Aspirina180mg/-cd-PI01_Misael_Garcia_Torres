@@ -4,44 +4,26 @@ Este proyecto de ciencia de datos se centra en el análisis de datos relacionado
  
  (tambien se pueden poner badges https://github.com/badges/shields)
 # Tabla de contenidos
-1. [Introduction](#introduction)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
-
-## This is the introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
-
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
-
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
-
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
-
-
-
 1. [Cómo Ejecutar el Proyecto](#ejecutar)
-## Requisitos del Sistema
-## Guía de uso rápido
-## Data Engineering
-### Repositorio y Conjuntos de Datos
-### Preprocesamiento de Datos
-## Análisis de Datos
-### Descripción del Proyecto
-## Deployment y la API
-## Funciones de la API
-## Archivos Generados
-## Contribuciones y Colaboraciones
-## Links
-## Licencia
-## Contacto
-## Menciones y agradecimientos
+2. [Requisitos del Sistema](#requisitos)
+3. [Guía de uso rápido](#usorapido)
+4.  [Data Engineering](#dataengineer)
+    1. [Repositorio y Conjuntos de Datos](#datos)
+    2. [Preprocesamiento de Datos](#preprocesamiento)
+5. [Análisis de Datos](#analisis)
+    1. [Descripción del Proyecto](#descripcion)
+6. [Funciones de la API](#funciones)
+7. [Deployment y la API](#deploy)
+8. [Archivos Generados](#archivos)
+9. [Contribuciones y Colaboraciones](#contribuciones)
+10. [Links](#links)
+11. [Licencia](#licencia)
+12. [Contacto](#contacto)
+13. [Menciones y agradecimientos](#menciones)
 ------------------------------------------------------------------------------------------------------------------------------------
+<a name="ejecutar"></a>
 
-## Cómo Ejecutar el Proyecto <a name="ejecutar"></a>
+## Cómo Ejecutar el Proyecto 
 
 Para ejecutar el proyecto localmente, sigue estos pasos:
 
@@ -50,6 +32,8 @@ Para ejecutar el proyecto localmente, sigue estos pasos:
 3. Ejecuta el archivo `PI01_Misael_Garcia_Torres.ipynb` en un entorno de Jupyter Notebook o Google Colab.
 4. Explora y ejecuta las celdas según sea necesario para realizar análisis y obtener resultados.
 
+<a name="requisitos"></a>
+
 ### Requisitos del Sistema
 El proyecto se ha desarrollado y probado en un entorno con las siguientes especificaciones:
 
@@ -57,18 +41,24 @@ El proyecto se ha desarrollado y probado en un entorno con las siguientes especi
 - Memoria RAM: 16 GB
 - Procesador: Intel Core i7-9700K
 
+<a name="usorapido"></a>
+
 ## Guía de uso rápido
 Hay que redactar una forma rápida de cargar modificaciones a la base de datos y generar resultados que se puedan subir a la api.
 
 
-
+<a name="dataengineer"></a>
 
 ## Data Engineering
+
+<a name="datos"></a>
 
 ### Repositorio y Conjuntos de Datos
 
 - El repositorio del proyecto se encuentra disponible en [GitHub](https://github.com/soyHenry/PI_ML_OPS/tree/PT?tab=readme-ov-file).
 - Los conjuntos de datos utilizados se encuentran disponibles en [Google Drive](https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj).
+
+<a name="preprocesamiento"></a>
 
 ### Preprocesamiento de Datos
 
@@ -78,7 +68,11 @@ Hay que redactar una forma rápida de cargar modificaciones a la base de datos y
   - Matplotlib
   - NLTK
 
+<a name="analisis"></a>
+
 ## Análisis de Datos
+
+<a name="descripcion"></a>
 
 ### Descripción del Proyecto
 
@@ -90,14 +84,7 @@ El proyecto se divide en las siguientes secciones principales:
 4. **Análisis de Sentimientos:** Utilización de análisis de sentimientos para evaluar las opiniones de los usuarios en las reseñas de juegos.
 5. **Generación de Reportes:** Creación de visualizaciones y reportes estadísticos para identificar patrones y tendencias en los datos.
 
-## Deployment y la API
-La API puede ser probada en local utilizando uvicorn con el siguiente comando dentro de la carpeta raíz del proyecto:
-
-```bash
-uvicorn main:app --reload
-```
-
-la API está deployada en Render, cada modificación hecha en el archivo `main.py` se verá de forma automática en uvicor, pero debe ser actualizada manualmente en el Deploy de Render.
+<a name="funciones"></a>
 
 ## Funciones de la API
 
@@ -111,6 +98,19 @@ El proyecto también incluye la implementación de una API para proporcionar acc
 para más información se puede consultar la documentación de la api en :
 Ingresar enlace de Render/Docs
 
+<a name="deploy"></a>
+
+## Deployment
+La API puede ser probada en local utilizando uvicorn con el siguiente comando dentro de la carpeta raíz del proyecto:
+
+```bash
+uvicorn main:app --reload
+```
+
+la API está deployada en Render, cada modificación hecha en el archivo `main.py` se verá de forma automática en uvicor, pero debe ser actualizada manualmente en el Deploy de Render.
+
+<a name="archivos"></a>
+
 ## Archivos Generados
 
 El proyecto genera varios archivos CSV con datos preprocesados y resultados de análisis para su posterior uso y visualización.
@@ -118,9 +118,13 @@ El proyecto genera varios archivos CSV con datos preprocesados y resultados de a
 - `PlayTimeGenre.csv`: Contiene información sobre el tiempo de juego por género y año.
 - Otros archivos CSV generados para cada función de la API con los resultados correspondientes.
 
+<a name="contribuciones"></a>
+
 ## Contribuciones y Colaboraciones
 
 ¡Las contribuciones al proyecto son bienvenidas! Si deseas colaborar, no dudes en enviar una solicitud de extracción (pull request) o abrir un problema (issue) en el repositorio de GitHub.
+
+<a name="links"></a>
 
 ## Links
 
@@ -138,11 +142,13 @@ links to humans using your project. You can include links like:
   - Your other project: https://github.com/your/other-project/
   - Someone else's project: https://github.com/someones/awesome-project/
 
+<a name="licencia"></a>
 
 ## Licencia
 
 Este proyecto se distribuye bajo la [licencia MIT](https://choosealicense.com/licenses/mit/). Consulta el archivo `LICENSE.txt` para obtener más detalles.
 
+<a name="contacto"></a>
 
 ## Contacto
 
@@ -152,6 +158,8 @@ Para obtener más información o realizar preguntas sobre el proyecto, puedes po
 - Teléfono: +56 931 854 247
 - Correo Electrónico: [misagtor@gmail.com)
 - LinkedIn: [linkedin.com/in/mgarciat](https://www.linkedin.com/in/mgarciat/)
+
+<a name="menciones"></a>
 
 ## Menciones y agradecimientos
 
