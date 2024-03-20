@@ -208,7 +208,7 @@ async def recomendacion_juego(id_juego: int):
     
     Consultas de Ejemplo
     --------
-    023542, 97432018, 341564, 12354653 o 89736213.
+    123456, 456456 o 777999.
     """
     df_id_juego = df_recomendacion_juego[df_recomendacion_juego['id_juego'] == id_juego]
     if df_id_juego.empty:
@@ -242,7 +242,7 @@ async def recomendacion_usuario(id_usuario: int):
     
     Consultas de Ejemplo
     --------
-    "CrappyLupo", "JinxUWU", "Crosstiched", "Exposed" o "Crack".
+    "pepito", "juanito" o "sabito".
     """
     
     df_id_usuario = df_recomendacion_usuario[df_recomendacion_usuario['id_usuario'] == id_usuario]
