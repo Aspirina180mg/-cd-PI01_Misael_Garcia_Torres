@@ -175,4 +175,4 @@ Para obtener más información o realizar preguntas sobre el proyecto, puedes po
 
 ## Menciones y agradecimientos
 
-Para la realización de este proyecto se utilizaron los conocimientos adquiridos en el Bootcamp de Data Science del Equipo de "[Henry](https://web.soyhenry.com/about-us)", agradezco también a mis TAs Roberto Schaefer y Rafael Alvarez, quienes me acompañaron durante todo el proceso, son unos cracks.
+Para la realización de este proyecto se utilizaron los conocimientos adquiridos en el Bootcamp de Data Science del Equipo de "[Henry](https://web.soyhenry.com/about-us)", agradezco también a mis TAs Rafael Alvarez y Roberto Schaefer, quienes me acompañaron durante todo el proceso, son unos cracks, el agradecimiento final va a mi señora Kimberly Moya y a mi hijo Javier García, por apoyarme y aguantarme durante la realziación de este y todos mis proyectos.
