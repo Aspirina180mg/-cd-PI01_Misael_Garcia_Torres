@@ -42,7 +42,7 @@ async def PlayTimeGenre(genero: str):
 
     Consultas de Ejemplo
     --------
-    "Action", "Card Game", "Casual", "Indie" o "Sports".
+    "Action", "Casual" o "Indie".
     """
     genero_original = genero
     genero = genero.lower()
