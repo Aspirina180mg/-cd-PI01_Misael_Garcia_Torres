@@ -3,7 +3,7 @@
 Este proyecto de ciencia de datos se centra en el análisis de datos relacionados con Steam, la plataforma de distribución de videojuegos de Valve Corporation. El objetivo principal es realizar análisis y extracciones de información relevante para la recomendación de juegos al usuario, entregando más valor a su experiencia en la plataforma, los resultados de estos análisis serán cargados en una API
 
 ## Video de demostración
-
+[![Watch the video](https://img.youtube.com/vi/<VIDEO ID>/maxresdefault.jpg)](https://www.youtube.com/watch?v=<VIDEO ID>)
  
 # Tabla de contenidos
 1. [Cómo Ejecutar el Proyecto](#ejecutar)
