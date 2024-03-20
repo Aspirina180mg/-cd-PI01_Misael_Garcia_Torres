@@ -78,7 +78,7 @@ async def UserForGenre(genero: str):
     
     Consultas de Ejemplo
     --------
-    "Action", "Card Game", "Casual", "Indie" o "Sports".
+    "Action", "Casual" o "Indie".
     """
     genero_original = genero
     genero = genero.lower()
@@ -113,7 +113,7 @@ async def UsersRecommend(anio: int):
     
     Consultas de Ejemplo
     --------
-    2015, 02018, 2020, 2021 o 2022.
+    2012, 2015 o 2017.
     """
     df_año = df_UsersRecommend[df_UsersRecommend['año'] == anio]
     if df_año.empty:
@@ -145,7 +145,7 @@ async def UsersNotRecommend(anio: int):
     
     Consultas de Ejemplo
     --------
-    2015, 02018, 2020, 2021 o 2022.
+    2012, 2015 o 2017.
     """
     df_año = df_UsersNotRecommend[df_UsersNotRecommend['año'] == anio]
     if df_año.empty:
@@ -177,7 +177,7 @@ async def sentiment_analysis(anio: int):
     
     Consultas de Ejemplo
     --------
-    2015, 02018, 2020, 2021 o 2022.
+    2012, 2015 o 2017.
     """
     df_año = df_sentiment_analysis[df_sentiment_analysis['año'] == anio]
     if df_año.empty:
