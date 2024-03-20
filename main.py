@@ -130,12 +130,12 @@ async def UsersNotRecommend(anio: int):
     Parametros
     ----------
     anio : int
-        El año para el cual se desea obtener el top 3 de juegos más recomendados.
+        El año para el cual se desea obtener el top 3 de juegos menos recomendados.
     
     Devuelve
     ----------
     list
-        Una lista de diccionarios que contiene los juegos más recomendados para el año dado
+        Una lista de diccionarios que contiene los juegos menos recomendados para el año dado
     
     Ejemplo
     --------
