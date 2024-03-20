@@ -210,14 +210,13 @@ async def recomendacion_juego(id_juego: int):
     --------
     023542, 97432018, 341564, 12354653 o 89736213.
     """
-    #! Chequear si la función está correcta, el formato del diccionario será similar a df_UsersRecommend
-    df_id_juego = df_recomendacion_juegp[df_recomendacion_juego['id_juego'] == id_juego]
+    df_id_juego = df_recomendacion_juego[df_recomendacion_juego['id_juego'] == id_juego]
     if df_id_juego.empty:
-        #! comvertir id en nombre de juego
-        return {"No se encontraron datos para el juego {}".format(id_juego)}
-    top = df_id_juego.head(3)
-    #! modificar return para que ajuste al ejemplo.
-    return [{'Puesto ' + str(row['puesto']): row['juego']} for _, row in top.iterrows()]
+        return {"No se encontraron datos para el id {}".format(id_juego)}
+    top = df_id_juego.head(5)
+    nombre_juego = df_id_juego['nombre_juego'].iloc[0]
+    juegos_recomendados = {'Juegos recomendados para el juego {}:'.format(nombre_juego): set(top['juego'])}
+    return juegos_recomendados
 
 @app.get('/recomendacion_usuario/{id_usuario}')
 async def recomendacion_usuario(id_usuario: int):
@@ -245,10 +244,10 @@ async def recomendacion_usuario(id_usuario: int):
     --------
     "CrappyLupo", "JinxUWU", "Crosstiched", "Exposed" o "Crack".
     """
-    #! Chequear si la función está correcta, el formato del diccionario será similar a df_UsersRecommend
+    
     df_id_usuario = df_recomendacion_usuario[df_recomendacion_usuario['id_usuario'] == id_usuario]
     if df_id_usuario.empty:
         return {"No se encontraron datos para el usuario {}".format(id_usuario)}
-    top = df_id_usuario.head(3)
-    #! modificar return para que ajuste al ejemplo.
-    return [{'Puesto ' + str(row['puesto']): row['juego']} for _, row in top.iterrows()]
+    top = df_id_usuario.head(5)
+    juegos_recomendados = {'Juegos recomendados para el usuario {}:'.format(id_usuario): set(top['juego'])}
+    return juegos_recomendados
