@@ -219,7 +219,7 @@ async def recomendacion_juego(id_juego: int):
     return juegos_recomendados
 
 @app.get('/recomendacion_usuario/{id_usuario}')
-async def recomendacion_usuario(id_usuario: int):
+async def recomendacion_usuario(id_usuario: str):
     """
     Devuelve una Lista de recomendación con 5 juegos recomendados para dicho usuario.
     Devuelve mensaje de error de no encontrar un registro
