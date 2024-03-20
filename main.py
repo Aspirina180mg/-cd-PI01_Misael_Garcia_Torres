@@ -244,10 +244,11 @@ async def recomendacion_usuario(id_usuario: int):
     --------
     "pepito", "juanito" o "sabito".
     """
-    
+    id_original = id_usuario
+    id_usuario = id_usuario.lower()
     df_id_usuario = df_recomendacion_usuario[df_recomendacion_usuario['id_usuario'] == id_usuario]
     if df_id_usuario.empty:
-        return {"No se encontraron datos para el usuario {}".format(id_usuario)}
+        return {"No se encontraron datos para el usuario {}".format(id_original)}
     top = df_id_usuario.head(5)
-    juegos_recomendados = {'Juegos recomendados para el usuario {}:'.format(id_usuario): set(top['juego'])}
+    juegos_recomendados = {'Juegos recomendados para el usuario {}:'.format(id_original): set(top['juego'])}
     return juegos_recomendados
