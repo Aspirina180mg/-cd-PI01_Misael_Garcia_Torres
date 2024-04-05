@@ -155,6 +155,9 @@ Seguimiento de problemas: https://github.com/Aspirina180mg/PI01_Misael_Garcia_To
   - En caso de bugs sensibles como vulnerabilidades de seguridad, por favor
     contacte directamente al correo misagtor@gmail.com en lugar de abrir un 
     problema (issue), esto para agilizar el proceso de resolución.
+Otros repositorios similares:
+    Repositorio de Juan Garate: https://github.com/Batxa/DS_Project1
+    
 
 <a name="licencia"></a>
 
